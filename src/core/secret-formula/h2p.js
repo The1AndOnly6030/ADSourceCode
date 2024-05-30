@@ -37,6 +37,46 @@ visible tab and subtab, if such an entry exists.
       tab: ""
     },
     {
+      name: "The Mod's Changes",
+      info: () => `
+Welcome to my stupid mod!
+<br>
+I sadly have nothing changed on this mod... yet. Well, except for this page.
+<br>
+(Note to self: <b><i>Frequently change this text!</b></i>)
+`,
+      isUnlocked: () => true,
+      tags: ["mod", "change", "6030", "done"],
+      tab: ""
+    },
+    {
+      name: "Planned Changes",
+      info: () => `
+It would be boring to have a purely vanilla AD "mod", so I want to shake stuff up. 
+As such, I have a long-ish plan of changes I want to make.
+<br>
+<br>
+First off, I want to get rid of all those annoying timewalls. I want the ${formatInt(DC.E18000)} Replicanti, 
+${formatInt(2e9)} Banked Infinities, and many more timewalls to just be way faster. Same goes with how it takes 
+a while to cure Ra's memory loss, take everything Lai'tela has, achieving total destruction, and even 
+reaching Infinity/Eternity. Raising the pre-Reality RM cap would also be cool.
+<br>
+Timewall removals aside, I also just want to make the game much faster. Essentially, I want to 
+do stuff similar to what I did with my now deleted (because I broke it :/) mod. That stuff includes:
+<br>
+Adding some more Time Studies, improving existing ones and adding a few more.
+<br>
+Adding an immediate early-game buff, then removing it later on. Also adding some achievement rewards 
+like improved Infinity Power conversion, smaller Time Shard threshold increase, etc would be cool.
+<br>
+<br>
+That's all I can think of for now.
+`,
+      isUnlocked: () => true,
+      tags: ["mod", "change", "plan", "6030", "IfYouSeeThisThenTheModIsVeryUnfinished"],
+      tab: ""
+    },
+    {
       name: "Your savefile",
       info: () => `
 Your game's save data is stored on your computer's browser data if you are playing on a web browser, or in your Steam

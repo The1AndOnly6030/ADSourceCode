@@ -9,6 +9,25 @@ export const changelog = [
    * }
    */
   {
+    date: [2024, 5, 29],
+    name: "The New Era",
+    info: `
+Today marks the creation of my mod!
+<br>
+I'll try to remember to add new changelog info every week that I update the mod, though it'll probably 
+be pretty inconsistent. Oh well, at least I'll try to remember.
+<br>
+<br>
+<b><i>Initial Changes (2020/5/29):</i></b>
+<br>
+<li>Created the mod</li>
+<li>Added new How to Play entries describing the mod and planned changes in the future</li>
+<li>Added a changelog entry mentioning the existence of made changes (hi!).</li>
+<br>
+That's all for now.
+`
+  },
+  { 
     date: [2024, 5, 2],
     name: "Celebrate Android Reality Update",
     info: `
