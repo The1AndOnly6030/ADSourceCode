@@ -18,13 +18,23 @@ I'll try to remember to add new changelog info every week that I update the mod,
 be pretty inconsistent. Oh well, at least I'll try to remember.
 <br>
 <br>
-<b><i>Initial Changes (2020/5/29):</i></b>
+<b><i>Initial Changes (2024/5/29):</i></b>
 <br>
 <li>Created the mod</li>
-<li>Added new How to Play entries describing the mod and planned changes in the future</li>
-<li>Added a changelog entry mentioning the existence of made changes (hi!).</li>
+<li>Added new How to Play entries describing the mod and planned changes in the future.</li>
+<li>Added a changelog entry mentioning the existence of made changes (hi!)</li>
 <br>
-That's all for now.
+<b><i>First ACTUAL Changes (2024/6/02):</i></b>
+<br>
+<li>Added rewards to Achievements 51, 82, 101, and 122</li>
+<br>
+<b><i>Second Changes (2024/6/03):</i></b>
+<li>Fixed Achievements 101 and 122 crashing the game</li>
+<li>Added rewards to Achievements 123, 152, and 161</li>
+<li>Increased the Glyph limit to 200</li>
+<li>Added two new Time Studies, both improving replication chance</li>
+<li>Made a few Reality Upgrades even better</li>
+<br>
 `
   },
   { 

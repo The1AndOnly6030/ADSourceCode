@@ -146,6 +146,20 @@ function applyNDPowers(mult, tier) {
   const glyphPowMultiplier = getAdjustedGlyphEffect("powerpow");
   const glyphEffarigPowMultiplier = getAdjustedGlyphEffect("effarigdimensions");
 
+  if (tier === 1) {
+    multiplier = multiplier
+    .powEffectOf(
+      Achievement(122)
+    );
+  }
+
+  if (tier === 8) {
+    multiplier = multiplier
+    .powEffectOf(
+      Achievement(101)
+    );
+  }
+
   if (InfinityChallenge(4).isRunning && player.postC4Tier !== tier) {
     multiplier = multiplier.pow(InfinityChallenge(4).effectValue);
   }

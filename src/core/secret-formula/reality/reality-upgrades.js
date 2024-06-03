@@ -142,10 +142,10 @@ export const realityUpgrades = [
     canLock: true,
     lockEvent: "Eternity",
     bypassLock: () => Currency.infinityPoints.exponent >= 400,
-    description: () => `Start every Reality with ${formatInt(100)} Eternities (also applies to current Reality)`,
+    description: () => `Start every Reality with ${formatInt(1000)} Eternities (also applies to current Reality)`,
     automatorPoints: 15,
-    shortDescription: () => `Start with ${formatInt(100)} Eternities`,
-    effect: () => 100
+    shortDescription: () => `Start with ${formatInt(1000)} Eternities`,
+    effect: () => 1000
   },
   {
     name: "The Boundless Flow",
@@ -233,8 +233,8 @@ export const realityUpgrades = [
     },
     checkRequirement: () => Glyphs.activeWithoutCompanion.countWhere(g => g.strength >= 1.5) === 4,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: "Improve the Glyph rarity formula",
-    effect: 1.3,
+    description: "Greatly improve the Glyph rarity formula",
+    effect: 1.6,
     formatCost: value => format(value, 1, 0)
   },
   {
@@ -252,8 +252,8 @@ export const realityUpgrades = [
     },
     checkRequirement: () => Glyphs.activeWithoutCompanion.countWhere(g => countValuesFromBitmask(g.effects) >= 2) === 4,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: () => `${formatPercents(0.5)} chance to get an additional effect on Glyphs`,
-    effect: 0.5,
+    description: () => `${formatPercents(0.75)} chance to get an additional effect on Glyphs`,
+    effect: 0.75,
     formatCost: value => format(value, 1, 0)
   },
   {

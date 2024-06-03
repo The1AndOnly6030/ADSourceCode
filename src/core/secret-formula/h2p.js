@@ -41,7 +41,20 @@ visible tab and subtab, if such an entry exists.
       info: () => `
 Welcome to my stupid mod!
 <br>
-I sadly have nothing changed on this mod... yet. Well, except for this page.
+I've finally made changes to this mod, and here they are:
+<br>
+Achievement 51 gives 4x IP, 82 gives +0.1 to Infinity Power conversion, 101 raises AD8 by ^1.001, 122 raises AD1 by ^1.008.
+Achievement 123 reduces the free Tickspeed threshold by -0.03x, now making it 1.30x/1.22x (from 1.33x/1.25x).
+Achievement 152 improves the Glyph level by 25.
+Achievement 161 reduces the Dilation penalty even more.
+<br>
+You can now hold 200 glyphs instead of 120!
+<br>
+Existentally Prolong now starts you with 1,000 Eternities.
+<br>
+Disparity of Rarity and Duplicity of Potency are much stronger (1.6x and 75% from 1.3x and 50%).
+<br>
+Disclaimer: the multiplier tab will rarely display changes from the mod.
 <br>
 (Note to self: <b><i>Frequently change this text!</b></i>)
 `,
@@ -56,8 +69,8 @@ It would be boring to have a purely vanilla AD "mod", so I want to shake stuff u
 As such, I have a long-ish plan of changes I want to make.
 <br>
 <br>
-First off, I want to get rid of all those annoying timewalls. I want the ${formatInt(DC.E18000)} Replicanti, 
-${formatInt(2e9)} Banked Infinities, and many more timewalls to just be way faster. Same goes with how it takes 
+First off, I want to get rid of all those annoying timewalls. I want the 1e18000 Replicanti, 
+2e9 Banked Infinities, and many more timewalls to just be way faster. Same goes with how it takes 
 a while to cure Ra's memory loss, take everything Lai'tela has, achieving total destruction, and even 
 reaching Infinity/Eternity. Raising the pre-Reality RM cap would also be cool.
 <br>

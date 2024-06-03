@@ -292,6 +292,8 @@ export const normalAchievements = [
     description: "Break Infinity.",
     checkRequirement: () => player.break,
     checkEvent: [GAME_EVENT.BREAK_INFINITY, GAME_EVENT.REALITY_RESET_AFTER, GAME_EVENT.REALITY_UPGRADE_TEN_BOUGHT],
+    get reward() { return `Gain ${formatX(4, 0, 2)} more Infinity Points.`},
+    effect: 4
   },
   {
     id: 52,
@@ -543,6 +545,8 @@ export const normalAchievements = [
     get description() { return `Complete all ${formatInt(8)} Infinity Challenges.`; },
     checkRequirement: () => InfinityChallenges.completed.length === 8,
     checkEvent: [GAME_EVENT.INFINITY_CHALLENGE_COMPLETED, GAME_EVENT.REALITY_RESET_AFTER],
+    get reward() { return `Infinity Power conversion is improved by +0.1.`},
+    effect: 0.1
   },
   {
     id: 83,
@@ -696,7 +700,9 @@ export const normalAchievements = [
     name: "8 nobody got time for that",
     description: "Eternity without buying Antimatter Dimensions 1-7.",
     checkRequirement: () => player.requirementChecks.eternity.onlyAD8,
-    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
+    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
+    get reward() { return `8th Antimatter Dimensions are raised by ${formatPow(1.001, 0, 3)}.`},
+    effect: 1.001
   },
   {
     id: 102,
@@ -854,14 +860,18 @@ export const normalAchievements = [
     name: "You're already dead.",
     description: "Eternity without buying Antimatter Dimensions 2-8.",
     checkRequirement: () => player.requirementChecks.eternity.onlyAD1,
-    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
+    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
+    get reward() { return `1st Antimatter Dimensions are raised by ${formatPow(1.008, 0, 3)}.`},
+    effect: 1.008
   },
   {
     id: 123,
     name: "5 more eternities until the update",
     get description() { return `Complete ${formatInt(50)} unique Eternity Challenge tiers.`; },
     checkRequirement: () => EternityChallenges.completions >= 50,
-    checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER
+    checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER,
+    get reward() { return `Reduces the base Time Shard requirement per Tickspeed upgrade by -0.03x.`},
+    effect: 0.03
   },
   {
     id: 124,
@@ -1121,7 +1131,9 @@ export const normalAchievements = [
     name: "Y'all got any more of them Glyphs?",
     get description() { return `Have ${formatInt(100)} Glyphs in your inventory.`; },
     checkRequirement: () => Glyphs.inventoryList.length >= 100,
-    checkEvent: GAME_EVENT.GLYPHS_CHANGED
+    checkEvent: GAME_EVENT.GLYPHS_CHANGED,
+    get reward() { return `+${formatInt(25)} to Glyph level.`},
+    effect: 25
   },
   {
     id: 153,
@@ -1136,8 +1148,8 @@ export const normalAchievements = [
     get description() { return `Reality in under ${formatInt(5)} seconds (game time).`; },
     checkRequirement: () => Time.thisReality.totalSeconds <= 5,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    get reward() { return `${formatPercents(0.1)} chance each Reality of ${formatX(2)} Realities and Perk Points.`; },
-    effect: 0.1
+    get reward() { return `${formatPercents(0.5)} chance each Reality of ${formatX(2)} Realities and Perk Points.`; },
+    effect: 0.5
   },
   {
     id: 155,
@@ -1181,13 +1193,16 @@ export const normalAchievements = [
     name: "that's where you're wrong kiddo",
     get description() { return `Get ${formatPostBreak(DC.E1E8)} antimatter while Dilated.`; },
     checkRequirement: () => Currency.antimatter.exponent >= 100000000 && player.dilation.active,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    get reward() { return `Further reduce the Dilation penalty (${formatPow(1.025, 0, 3)} after reduction).`},
+    effect: 1.025
   },
   {
     id: 162,
     name: "Reinstalled the game and rejoined the server",
     description: "Have every Time Study at once.",
-    checkRequirement: () => player.timestudy.studies.length >= 58,
+    // Normally there are 58 non-Triad studies. Be sure to increase this number when you add custom studies!
+    checkRequirement: () => player.timestudy.studies.length >= 60,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {

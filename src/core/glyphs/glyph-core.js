@@ -74,7 +74,7 @@ export const Glyphs = {
     return 10 * player.reality.glyphs.protectedRows;
   },
   get totalSlots() {
-    return 120;
+    return 200;
   },
   changeProtectedRows(rowChange) {
     // Always ensure at least one unprotected row for new glyphs, to prevent some potentially odd-looking behavior

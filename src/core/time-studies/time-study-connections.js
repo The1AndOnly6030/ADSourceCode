@@ -71,6 +71,7 @@ TimeStudy.allConnections = (function() {
     [TS(103), TS(111)],
 
     [TS(111), EC(7)],
+    [TS(111), TS(112)],
 
     [TS(111), TS(121)],
     [TS(111), TS(122)],
@@ -92,6 +93,7 @@ TimeStudy.allConnections = (function() {
     [TS(143), EC(4)],
 
     [TS(151), EC(9)],
+    [TS(151), TS(152)],
 
     [TS(151), TS(161)],
     [TS(151), TS(162)],

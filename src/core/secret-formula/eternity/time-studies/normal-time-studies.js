@@ -266,6 +266,14 @@ export const normalTimeStudies = [
     effect: 285
   },
   {
+    id: 112,
+    cost: 10,
+    requirement: [111],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => "Nearly uncap Replication chance upgrades",
+    effect: 999999999
+  },
+  {
     id: 121,
     cost: 9,
     STCost: 2,
@@ -398,6 +406,14 @@ export const normalTimeStudies = [
     effect: 1e4
   },
   {
+    id: 152,
+    cost: 10,
+    requirement: [151],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Massively reduce the cost of Replication chance upgrades (${format(1e15)} ➜ ${format(1e3)})`,
+    effect: 1e12
+  },
+  {
     id: 161,
     cost: 7,
     requirement: [151],
@@ -418,7 +434,9 @@ export const normalTimeStudies = [
     cost: 15,
     requirement: [161, 162],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Time Shard requirement for the next Tickspeed upgrade goes up slower
+    // Check if r123 is unlocked, if so then make sure this displays correctly
+    description: () => Achievement(123).isUnlocked ? `Time Shard requirement for the next Tickspeed upgrade goes up slower
+      ${formatX(1.30, 0, 2)} ➜ ${formatX(1.22, 0, 2)}`: `Time Shard requirement for the next Tickspeed upgrade goes up slower
       ${formatX(1.33, 0, 2)} ➜ ${formatX(1.25, 0, 2)}`,
     effect: () => TS171_MULTIPLIER
   },
