@@ -28,6 +28,7 @@ This is week 2 of the mod.
 <br>
 <li>Improved rewards of Achievements 87 and 131</li>
 <li>Added rewards to Achievement 11, 136, and 174</li>
+<li>Modified the pre-Reality RM cap</li>
 <li>Added two \uE010s</li>
 `
   },

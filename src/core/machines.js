@@ -19,7 +19,8 @@ export const MachineHandler = {
   get uncappedRM() {
     let log10FinalEP = player.records.thisReality.maxEP.plus(gainedEternityPoints()).log10();
     if (!PlayerProgress.realityUnlocked()) {
-      if (log10FinalEP > 8000) log10FinalEP = 8000;
+      if (log10FinalEP > 12000) log10FinalEP = 12000;
+      if (log10FinalEP > 9000) log10FinalEP -= (log10FinalEP - 9000) * 0.5;
       if (log10FinalEP > 6000) log10FinalEP -= (log10FinalEP - 6000) * 0.75;
     }
     let rmGain = DC.E3.pow(log10FinalEP / 4000 - 1);
@@ -63,7 +64,7 @@ export const MachineHandler = {
 
   // Time in seconds to reduce the missing amount by a factor of two
   get scaleTimeForIM() {
-    return 60 / ImaginaryUpgrade(20).effectOrDefault(1);
+    return 10 / ImaginaryUpgrade(20).effectOrDefault(1);
   },
 
   gainedImaginaryMachines(diff) {

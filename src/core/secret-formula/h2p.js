@@ -67,6 +67,8 @@ Time Studies 225/226 now give bonus RGs for every e800 Replicanti/12 max RGs (fr
 <br>
 Eternity Challenges have reduced goals and unlock requirements (too many to list, sorry).
 <br>
+The pre-reality RM cap is now reached at 1e12000 EP, but RM gain is further softcapped at 1e9000 EP.
+<br>
 You can now hold 200 glyphs instead of 120!
 <br>
 Existentally Prolong now starts you with 1,000 Eternities.
@@ -78,6 +80,8 @@ Effarig's Eternity now caps base Infinity Point gain to 1e250 (from 1e200).
 Remembrance now has a 25x Memory Chunk multiplier (from 5x).
 <br>
 All base Memory Chunk formulas have their power quintupled.
+<br>
+Imaginary Machine gain is 6 times faster.
 <br>
 \uE010
 <br>
