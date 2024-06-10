@@ -22,6 +22,12 @@ This is week 2 of the mod.
 <li>Effarig's Eternity is made a little easier</li>
 <li>Remembrance is better</li>
 <li>Ra's dementia is cured faster</li>
+<br>
+<br>
+<b><i>Day 2 (2024/6/10):</i></b>
+<br>
+<li>Improved rewards of Achievements 87 and 131</li>
+<li>Added a reward to Achievement 174</li>
 `
   },
   {
@@ -44,6 +50,7 @@ be pretty inconsistent. Oh well, at least I'll try to remember.
 <br>
 <li>Added rewards to Achievements 51, 82, 101, and 122</li>
 <br>
+<br>
 <b><i>Second Changes (2024/6/03):</i></b>
 <li>Fixed Achievements 101 and 122 crashing the game</li>
 <li>Added rewards to Achievements 123, 152, and 161</li>
@@ -52,6 +59,7 @@ be pretty inconsistent. Oh well, at least I'll try to remember.
 <li>Made a few Reality Upgrades even better</li>
 <li>AM/IP Time Theorems are cheaper</li>
 <li><i>Every</i> Eternity Challenge has reduced goals and unlock requirements</li> 
+<br>
 <br>
 <b><i>Third Changes (2024/6/05):</i></b>
 <li>Added a reward to Achievements 127</li>

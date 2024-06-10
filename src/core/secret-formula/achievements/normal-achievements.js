@@ -595,11 +595,11 @@ export const normalAchievements = [
     checkRequirement: () => Currency.infinities.gt(DC.D2E6),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
-      return `Infinities more than ${formatInt(5)} seconds long
+      return `Infinities more than ${formatInt(1)} second long
       give ${formatX(250)} more Infinities.`;
     },
     effect: 250,
-    effectCondition: () => Time.thisInfinity.totalSeconds > 5
+    effectCondition: () => Time.thisInfinity.totalSeconds > 1
   },
   {
     id: 88,
@@ -946,11 +946,11 @@ export const normalAchievements = [
     checkRequirement: () => Currency.infinitiesBanked.gt(DC.D2E9),
     checkEvent: [GAME_EVENT.ETERNITY_RESET_AFTER, GAME_EVENT.SAVE_CONVERTED_FROM_PREVIOUS_VERSION],
     get reward() {
-      return `You gain ${formatX(2)} times more Infinities and
+      return `You gain ${formatX(5)} times more Infinities and
       after Eternity you permanently keep ${formatPercents(0.1)} of your Infinities as Banked Infinities.`;
     },
     effects: {
-      infinitiesGain: 2,
+      infinitiesGain: 5,
       bankedInfinitiesGain: () => Currency.infinities.value.times(0.1).floor()
     }
 
@@ -1301,7 +1301,9 @@ export const normalAchievements = [
     name: "Don't you already have two of these?",
     description: "Get a Singularity.",
     checkRequirement: () => true,
-    checkEvent: GAME_EVENT.SINGULARITY_RESET_BEFORE
+    checkEvent: GAME_EVENT.SINGULARITY_RESET_BEFORE,
+    get reward() { return `Gain ${formatX(100)} more Dark Energy.`},
+    effect: 100
   },
   {
     id: 175,

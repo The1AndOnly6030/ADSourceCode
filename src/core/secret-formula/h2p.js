@@ -43,23 +43,27 @@ Welcome to my stupid mod!
 <br>
 I've finally made changes to this mod, and here they are:
 <br>
-Achievement 51 gives 4x IP, 82 gives +0.1 to Infinity Power conversion, 101 raises AD8 by ^1.001, 122 raises AD1 by ^1.008.
+Achievement 51 gives 4x IP.
+Achievement 82 gives +0.1 to Infinity Power conversion.
+Achievement 87 now applies its effect (250x Infinities) after 1 second (down from 5).
+Achievement 101 raises AD8 by ^1.001.
+Achievement 122 raises AD1 by ^1.008.
 Achievement 123 reduces the free Tickspeed threshold by -0.03x, now making it 1.30x/1.22x (from 1.33x/1.25x).
 Achievement 127 multiplies EP gain by log2(current EP).
+Achievement 131 now lets you keep 10% of Infinities as Banked Infinities (from 5%) and gives 5x Infinities (from 2x).
 Achievement 152 improves the Glyph level by 25.
 Achievement 161 reduces the Dilation penalty even more.
+Achievement 174 gives 100x more Dark Energy.
 <br>
 Two new Time Studies are added to nearly uncap replication chance and make it much cheaper.
 <br>
-There are two more Time Studies to apply a power to ADs and IDs depending on Antimatter/Replicanti Galaxies, capped at 350/180 galaxies.
+Three other Time Studies are added, applying a power to ADs, IDs, and TDs based on AGs, RGs, and TGs (capped at 350, 180, and 250).
 <br>
 The cost scaling for Time Theorems bought by antimatter or Infinity Points is raised by ^0.9.
 <br>
 Time Studies 225/226 now give bonus RGs for every e800 Replicanti/12 max RGs (from e1000/15 max).
 <br>
 Eternity Challenges have reduced goals and unlock requirements (too many to list, sorry).
-<br>
-Added <i>yet another</i> Time Study, applying a power to TDs depending on Tachyon Galaxies, capped at 250 galaxies.
 <br>
 You can now hold 200 glyphs instead of 120!
 <br>
@@ -72,6 +76,9 @@ Effarig's Eternity now caps base Infinity Point gain to 1e250 (from 1e200).
 Remembrance now has a 25x Memory Chunk multiplier (from 5x).
 <br>
 All base Memory Chunk formulas have their power quintupled.
+<br>
+\uE010
+<br>
 <br>
 Disclaimer: the multiplier tab will rarely display changes from the mod.
 <br>
@@ -88,10 +95,7 @@ It would be boring to have a purely vanilla AD "mod", so I want to shake stuff u
 As such, I have a long-ish plan of changes I want to make.
 <br>
 <br>
-First off, I want to get rid of all those annoying timewalls. I want the 1e18000 Replicanti, 
-2e9 Banked Infinities, and many more timewalls to just be way faster. Same goes with how it takes 
-a while to cure Ra's memory loss, take everything Lai'tela has, achieving total destruction, and even 
-reaching Infinity/Eternity. Raising the pre-Reality RM cap would also be cool.
+First off, I want to get rid of all those annoying timewalls. Raising the pre-Reality RM cap would also be cool.
 <br>
 Timewall removals aside, I also just want to make the game much faster. Essentially, I want to 
 do stuff similar to what I did with my now deleted (because I broke it :/) mod. That stuff includes:
@@ -99,7 +103,7 @@ do stuff similar to what I did with my now deleted (because I broke it :/) mod. 
 Adding some more Time Studies, improving existing ones and adding a few more.
 <br>
 Adding an immediate early-game buff, then removing it later on. Also adding some achievement rewards 
-like improved Infinity Power conversion, smaller Time Shard threshold increase, etc would be cool.
+like improved Infinity Power conversion, smaller Time Shard threshold increase (both done), etc would be cool.
 <br>
 <br>
 That's all I can think of for now.
