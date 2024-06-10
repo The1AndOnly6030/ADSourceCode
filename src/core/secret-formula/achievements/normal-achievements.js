@@ -6,6 +6,8 @@ export const normalAchievements = [
     name: "You gotta start somewhere",
     description: "Buy a 1st Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() { return `Antimatter Dimensions are ${formatX(100)} stronger.`},
+    effect: 100
   },
   {
     id: 12,
@@ -1004,6 +1006,8 @@ export const normalAchievements = [
     name: "I told you already, time is relative",
     description: "Dilate time.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() { return `Gain ${formatX(100)} Dilated Time.`},
+    effect: 100
   },
   {
     id: 137,

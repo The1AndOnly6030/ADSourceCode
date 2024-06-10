@@ -43,6 +43,7 @@ Welcome to my stupid mod!
 <br>
 I've finally made changes to this mod, and here they are:
 <br>
+Achievement 11 makes ADs 100x stronger.
 Achievement 51 gives 4x IP.
 Achievement 82 gives +0.1 to Infinity Power conversion.
 Achievement 87 now applies its effect (250x Infinities) after 1 second (down from 5).
@@ -51,6 +52,7 @@ Achievement 122 raises AD1 by ^1.008.
 Achievement 123 reduces the free Tickspeed threshold by -0.03x, now making it 1.30x/1.22x (from 1.33x/1.25x).
 Achievement 127 multiplies EP gain by log2(current EP).
 Achievement 131 now lets you keep 10% of Infinities as Banked Infinities (from 5%) and gives 5x Infinities (from 2x).
+Achievement 136 gives 100x more Dilated Time.
 Achievement 152 improves the Glyph level by 25.
 Achievement 161 reduces the Dilation penalty even more.
 Achievement 174 gives 100x more Dark Energy.

@@ -27,7 +27,8 @@ This is week 2 of the mod.
 <b><i>Day 2 (2024/6/10):</i></b>
 <br>
 <li>Improved rewards of Achievements 87 and 131</li>
-<li>Added a reward to Achievement 174</li>
+<li>Added rewards to Achievement 11, 136, and 174</li>
+<li>Added two \uE010s</li>
 `
   },
   {

@@ -127,6 +127,7 @@ export function getDilationGainPerSecond() {
     .timesEffectsOf(
       DilationUpgrade.dtGain,
       Achievement(132),
+      Achievement(136),
       Achievement(137),
       RealityUpgrade(1),
       AlchemyResource.dilation,
