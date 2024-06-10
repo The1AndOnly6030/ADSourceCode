@@ -102,7 +102,7 @@ export function gainedInfinityPoints() {
     ? Decimal.pow10(player.records.thisInfinity.maxAM.log10() / div - 0.75)
     : new Decimal(308 / div);
   if (Effarig.isRunning && Effarig.currentStage === EFFARIG_STAGES.ETERNITY) {
-    ip = ip.min(DC.E200);
+    ip = ip.min(DC.E250);
   }
   ip = ip.times(GameCache.totalIPMult.value);
   if (Teresa.isRunning) {
@@ -126,6 +126,7 @@ function totalEPMult() {
       .times(ShopPurchase.EPPurchases.currentMult)
       .timesEffectsOf(
         EternityUpgrade.epMult,
+        Achievement(127),
         TimeStudy(61),
         TimeStudy(122),
         TimeStudy(121),
@@ -608,7 +609,7 @@ export function gameLoop(passDiff, options = {}) {
 
   if (Enslaved.canTickHintTimer) {
     player.celestials.enslaved.hintUnlockProgress += Enslaved.isRunning ? realDiff : (realDiff * 0.4);
-    if (player.celestials.enslaved.hintUnlockProgress >= TimeSpan.fromHours(5).totalMilliseconds) {
+    if (player.celestials.enslaved.hintUnlockProgress >= TimeSpan.fromHours(0.5).totalMilliseconds) {
       EnslavedProgress.hintsUnlocked.giveProgress();
       Enslaved.quotes.hintUnlock.show();
     }

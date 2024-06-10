@@ -9,6 +9,22 @@ export const changelog = [
    * }
    */
   {
+    date: [2024, 6, 7],
+    name: "I Hate Naming These",
+    info: `
+This is week 2 of the mod.
+<br>
+<br>
+<b><i>Day 1 (2024/6/07):</i></b>
+<br>
+<li>Added three new studies applying a power to ADs, IDs, and TDs</li>
+<li>TS225/226 are improved</li>
+<li>Effarig's Eternity is made a little easier</li>
+<li>Remembrance is better</li>
+<li>Ra's dementia is cured faster</li>
+`
+  },
+  {
     date: [2024, 5, 29],
     name: "The New Era",
     info: `
@@ -34,6 +50,11 @@ be pretty inconsistent. Oh well, at least I'll try to remember.
 <li>Increased the Glyph limit to 200</li>
 <li>Added two new Time Studies, both improving replication chance</li>
 <li>Made a few Reality Upgrades even better</li>
+<li>AM/IP Time Theorems are cheaper</li>
+<li><i>Every</i> Eternity Challenge has reduced goals and unlock requirements</li> 
+<br>
+<b><i>Third Changes (2024/6/05):</i></b>
+<li>Added a reward to Achievements 127</li>
 <br>
 `
   },

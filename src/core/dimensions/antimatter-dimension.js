@@ -171,6 +171,7 @@ function applyNDPowers(mult, tier) {
 
   multiplier = multiplier
     .powEffectsOf(
+      TimeStudy(161),
       AntimatterDimension(tier).infinityUpgrade.chargedEffect,
       InfinityUpgrade.totalTimeMult.chargedEffect,
       InfinityUpgrade.thisInfinityTimeMult.chargedEffect,

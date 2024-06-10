@@ -1,4 +1,5 @@
 import { DC } from "../../../constants";
+import { Currency } from "../../../currency";
 
 const thisInfinityMult = thisInfinity => {
   // All "this inf time" or "best inf time" mults are * 10
@@ -415,6 +416,16 @@ export const normalTimeStudies = [
   },
   {
     id: 161,
+    cost: 8,
+    requirement: [162],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Antimatter Dimensions gain a power based on Antimatter Galaxies`,
+    effect: () => 1 + player.galaxies / 5000,
+    formatEffect: value => formatPow(value, 4, 5),
+    cap: 1.07
+  },
+  {
+    id: 162,
     cost: 7,
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
@@ -422,12 +433,22 @@ export const normalTimeStudies = [
     effect: () => DC.E616
   },
   {
-    id: 162,
+    id: 163,
     cost: 7,
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `${formatX(1e11)} multiplier on all Infinity Dimensions`,
     effect: 1e11
+  },
+  {
+    id: 164,
+    cost: 8,
+    requirement: [163],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Infinity Dimensions gain a power based on Replicanti Galaxies`,
+    effect: () => 1 + player.replicanti.galaxies / 18000,
+    formatEffect: value => formatPow(value, 4, 5),
+    cap: 1.01
   },
   {
     id: 171,
@@ -581,7 +602,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [226],
     description: "You gain extra Replicanti Galaxies based on Replicanti amount",
-    effect: () => Math.floor(Replicanti.amount.exponent / 1000),
+    effect: () => Math.floor(Replicanti.amount.exponent / 800),
     formatEffect: value => `+${formatInt(value)} RG`
   },
   {
@@ -592,7 +613,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [225],
     description: "You gain extra Replicanti Galaxies based on their max",
-    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 15),
+    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 12),
     formatEffect: value => `+${formatInt(value)} RG`
   },
   {
@@ -660,6 +681,17 @@ export const normalTimeStudies = [
     requiresST: [233],
     description: "Dimensional Sacrifice applies to 1st Antimatter Dimension",
     effect: () => Sacrifice.totalBoost,
+  },
+  // This next study is only reasonably available after unlocking dilation in early realities
+  {
+    id: 241,
+    cost: 30000,
+    requirement: [231, 232, 233, 234],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: "Time Dimensions gain a power based on Tachyon Galaxies",
+    effect: () => 1 + (player.dilation.totalTachyonGalaxies * 0.0004),
+    formatEffect: value => formatPow(value, 4, 5),
+    cap: 1.1
   },
   // Note: These last 4 entries are the triad studies
   {

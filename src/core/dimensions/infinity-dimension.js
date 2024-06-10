@@ -144,6 +144,7 @@ class InfinityDimensionState extends DimensionState {
     if (EternityChallenge(11).isRunning) return DC.D1;
     let mult = GameCache.infinityDimensionCommonMultiplier.value
       .timesEffectsOf(
+        tier === 1 ? Achievement(77) : null,
         tier === 1 ? Achievement(94) : null,
         tier === 4 ? TimeStudy(72) : null,
         tier === 1 ? EternityChallenge(2).reward : null
@@ -203,6 +204,7 @@ class InfinityDimensionState extends DimensionState {
   get powerMultiplier() {
     return new Decimal(this._powerMultiplier)
       .timesEffectsOf(this._tier === 8 ? GlyphSacrifice.infinity : null)
+      .pow(TimeStudy(164).effectOrDefault(1))
       .pow(ImaginaryUpgrade(14).effectOrDefault(1));
   }
 

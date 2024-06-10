@@ -17,6 +17,12 @@ export const EP = {
     isDilated: true,
     overlay: ["Δ", "<i class='fa-solid fa-layer-group' />"],
   },
+  achievement: {
+    name: "Achievement 127",
+    multValue: () => Achievement(127).effectOrDefault(1),
+    isActive: () => Achievement(127).canBeApplied,
+    icon: MultiplierTabIcons.ACHIEVEMENT,
+  },
   base: {
     name: "Base Eternity Points",
     isBase: true,

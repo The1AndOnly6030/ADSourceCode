@@ -292,7 +292,7 @@ export const normalAchievements = [
     description: "Break Infinity.",
     checkRequirement: () => player.break,
     checkEvent: [GAME_EVENT.BREAK_INFINITY, GAME_EVENT.REALITY_RESET_AFTER, GAME_EVENT.REALITY_UPGRADE_TEN_BOUGHT],
-    get reward() { return `Gain ${formatX(4, 0, 2)} more Infinity Points.`},
+    get reward() { return `Additional ${formatX(4)} multiplier to Infinity Points.`},
     effect: 4
   },
   {
@@ -519,7 +519,9 @@ export const normalAchievements = [
     name: "1 Million is a lot",
     get description() { return `Reach ${format(1e6)} Infinity Power.`; },
     checkRequirement: () => Currency.infinityPower.exponent >= 6,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    reward: "Double Infinity Power gain.",
+    effect: 2
   },
   {
     id: 78,
@@ -922,7 +924,10 @@ export const normalAchievements = [
     name: "But I wanted another prestige layer...",
     get description() { return `Reach ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} Eternity Points.`; },
     checkRequirement: () => Currency.eternityPoints.gte(Decimal.NUMBER_MAX_VALUE),
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    get reward() { return `Gain more Eternity Points based on your current Eternity Points.`},
+    effect: () => Math.clampMin(1, Currency.eternityPoints.value.log2()),
+    formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 128,
@@ -942,11 +947,11 @@ export const normalAchievements = [
     checkEvent: [GAME_EVENT.ETERNITY_RESET_AFTER, GAME_EVENT.SAVE_CONVERTED_FROM_PREVIOUS_VERSION],
     get reward() {
       return `You gain ${formatX(2)} times more Infinities and
-      after Eternity you permanently keep ${formatPercents(0.05)} of your Infinities as Banked Infinities.`;
+      after Eternity you permanently keep ${formatPercents(0.1)} of your Infinities as Banked Infinities.`;
     },
     effects: {
       infinitiesGain: 2,
-      bankedInfinitiesGain: () => Currency.infinities.value.times(0.05).floor()
+      bankedInfinitiesGain: () => Currency.infinities.value.times(0.1).floor()
     }
 
   },

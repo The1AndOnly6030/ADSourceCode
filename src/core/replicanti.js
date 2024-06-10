@@ -343,7 +343,7 @@ export const ReplicantiUpgrade = {
     get costIncrease() { return 1e15 / TimeStudy(152).effectOrDefault(1); }
 
     get cap() {
-      // Chance never goes over 100%, improved to 1e9% with TS112
+      // Chance never goes over 100%, improved to 1e11% with TS112
       return 1 + TimeStudy(112).effectOrDefault(0);
     }
 

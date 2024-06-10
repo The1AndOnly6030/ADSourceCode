@@ -231,7 +231,7 @@ export const Ra = {
   unlocks,
   pets,
   remembrance: {
-    multiplier: 5,
+    multiplier: 25,
     nerf: 0.5,
     requiredLevels: 20,
     get isUnlocked() {

@@ -45,14 +45,33 @@ I've finally made changes to this mod, and here they are:
 <br>
 Achievement 51 gives 4x IP, 82 gives +0.1 to Infinity Power conversion, 101 raises AD8 by ^1.001, 122 raises AD1 by ^1.008.
 Achievement 123 reduces the free Tickspeed threshold by -0.03x, now making it 1.30x/1.22x (from 1.33x/1.25x).
+Achievement 127 multiplies EP gain by log2(current EP).
 Achievement 152 improves the Glyph level by 25.
 Achievement 161 reduces the Dilation penalty even more.
+<br>
+Two new Time Studies are added to nearly uncap replication chance and make it much cheaper.
+<br>
+There are two more Time Studies to apply a power to ADs and IDs depending on Antimatter/Replicanti Galaxies, capped at 350/180 galaxies.
+<br>
+The cost scaling for Time Theorems bought by antimatter or Infinity Points is raised by ^0.9.
+<br>
+Time Studies 225/226 now give bonus RGs for every e800 Replicanti/12 max RGs (from e1000/15 max).
+<br>
+Eternity Challenges have reduced goals and unlock requirements (too many to list, sorry).
+<br>
+Added <i>yet another</i> Time Study, applying a power to TDs depending on Tachyon Galaxies, capped at 250 galaxies.
 <br>
 You can now hold 200 glyphs instead of 120!
 <br>
 Existentally Prolong now starts you with 1,000 Eternities.
 <br>
 Disparity of Rarity and Duplicity of Potency are much stronger (1.6x and 75% from 1.3x and 50%).
+<br>
+Effarig's Eternity now caps base Infinity Point gain to 1e250 (from 1e200).
+<br>
+Remembrance now has a 25x Memory Chunk multiplier (from 5x).
+<br>
+All base Memory Chunk formulas have their power quintupled.
 <br>
 Disclaimer: the multiplier tab will rarely display changes from the mod.
 <br>
