@@ -108,6 +108,7 @@ export const tabs = [
         id: 2,
         hidable: true,
       },
+      /*
       {
         key: "multipliers",
         name: "Multiplier Breakdown",
@@ -117,6 +118,7 @@ export const tabs = [
         id: 3,
         hidable: true,
       },
+      */
       {
         key: "glyph sets",
         name: "Glyph Set Records",
@@ -483,7 +485,7 @@ export const tabs = [
     name: "Shop",
     newUIClass: "shop",
     hideAt: 1.5,
-    condition: () => Cloud.isAvailable,
+    condition: () => GalaxyGenerator.isUnlocked,
     id: 10,
     hidable: true,
     subtabs: [

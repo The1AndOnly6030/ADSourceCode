@@ -60,7 +60,7 @@ export const pelleRifts = {
     // 0 - 1
     percentageToFill: percentage => Decimal.pow(10, 20 * percentage * 100).minus(1),
     effect: totalFill => (PelleRifts.chaos.milestones[0].canBeApplied
-      ? Decimal.sqrt(2000 + 1) : Decimal.sqrt(totalFill.plus(1).log10() + 1)),
+      ? Decimal.sqrt(10000 + 1) : Decimal.sqrt(totalFill.plus(1).log10() * 5 + 1)),
     currency: () => Currency.replicanti,
     galaxyGeneratorThreshold: 1e7,
     milestones: [
@@ -183,7 +183,7 @@ export const pelleRifts = {
     key: "paradox",
     name: ["Paradox", "Contradiction", "Fallacy"],
     drainResource: "Dilated Time",
-    baseEffect: x => `All Dimensions ${formatPow(x, 2, 3)}`,
+    baseEffect: x => `All Dimensions and TP to DT rate ${formatPow(x, 2, 3)}`,
     additionalEffects: () => [PelleRifts.paradox.milestones[2]],
     strike: () => PelleStrikes.dilation,
     percentage: totalFill => totalFill.plus(1).log10() / 100,

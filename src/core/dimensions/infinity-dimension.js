@@ -8,7 +8,7 @@ export function infinityDimensionCommonMultiplier() {
       Achievement(75),
       TimeStudy(82),
       TimeStudy(92),
-      TimeStudy(162),
+      TimeStudy(163),
       InfinityChallenge(1).reward,
       InfinityChallenge(6).reward,
       EternityChallenge(4).reward,

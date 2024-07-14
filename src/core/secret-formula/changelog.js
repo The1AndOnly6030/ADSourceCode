@@ -9,6 +9,22 @@ export const changelog = [
    * }
    */
   {
+    date: [2024, 6, 22],
+    name: "Not an update, just reviewing the changes",
+    info: `
+i hate having to do this
+<br>
+<br>
+<li>11 new rewards were added to achievements.</li>
+<li>Five new Time Studies were added, and a few were buffed.</li>
+<li>Three new changelog entries were added to mention the updates.</li>
+<li>The Multiplier Breakdown tab was removed.</li>
+<li>Progression was generally made <i>much</i> faster for Ra and Lai'tela.</li>
+<li>Thanks to Hexa and Donald, TS241 now works much better.</li>
+<li>
+`
+  },
+  {
     date: [2024, 6, 7],
     name: "I Hate Naming These",
     info: `
@@ -29,7 +45,14 @@ This is week 2 of the mod.
 <li>Improved rewards of Achievements 87 and 131</li>
 <li>Added rewards to Achievement 11, 136, and 174</li>
 <li>Modified the pre-Reality RM cap</li>
+<li>Fixed TS161/162 having the wrong effects</li>
+<li>Fixed Existentally Prolong, now it actually does start you with 1000 eternities as advertised</li>
 <li>Added two \uE010s</li>
+<br>
+<br>
+<b><i>Day 3 (2024/6/11):</i></b>
+<br>
+<li>Made some perks better</li>
 `
   },
   {
@@ -64,7 +87,7 @@ be pretty inconsistent. Oh well, at least I'll try to remember.
 <br>
 <br>
 <b><i>Third Changes (2024/6/05):</i></b>
-<li>Added a reward to Achievements 127</li>
+<li>Added a reward to Achievement 127</li>
 <br>
 `
   },

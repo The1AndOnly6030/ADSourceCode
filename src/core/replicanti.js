@@ -390,8 +390,8 @@ export const ReplicantiUpgrade = {
 
     get baseCost() { return player.replicanti.intervalCost; }
     set baseCost(value) { player.replicanti.intervalCost = value; }
-
-    get costIncrease() { return 1e10; }
+    // Default costIncrease is 1e10
+    get costIncrease() { return 100; }
 
     get cap() {
       return Effects.min(50, TimeStudy(22));
@@ -471,8 +471,9 @@ export const ReplicantiUpgrade = {
 
     baseCostAfterCount(count) {
       const logBase = 170;
-      const logBaseIncrease = EternityChallenge(6).isRunning ? 2 : 25;
-      const logCostScaling = EternityChallenge(6).isRunning ? 2 : 5;
+      // Default increases while EC6 is active are both 2
+      const logBaseIncrease = EternityChallenge(6).isRunning ? 1 : 25;
+      const logCostScaling = EternityChallenge(6).isRunning ? 1 : 5;
       const distantReplicatedGalaxyStart = 100 + Effects.sum(GlyphSacrifice.replication);
       const remoteReplicatedGalaxyStart = 1000 + Effects.sum(GlyphSacrifice.replication);
       let logCost = logBase + count * logBaseIncrease + (count * (count - 1) / 2) * logCostScaling;
@@ -506,16 +507,17 @@ export const Replicanti = {
       amount: unlocked ? DC.D1 : DC.D0,
       timer: 0,
       chance: 0.01,
-      chanceCost: DC.E150,
+      chanceCost: DC.E140,
       interval: 1000,
-      intervalCost: DC.E140,
+      intervalCost: DC.E130,
       boughtGalaxyCap: 0,
       galaxies: 0,
-      galCost: DC.E170,
+      galCost: DC.E160,
     };
+    // Base chance, interval, and galaxy costs are 1e150, 1e140, and 1e170
   },
   unlock(freeUnlock = false) {
-    const cost = DC.E140.dividedByEffectOf(PelleRifts.vacuum.milestones[1]);
+    const cost = DC.E130.dividedByEffectOf(PelleRifts.vacuum.milestones[1]);
     if (player.replicanti.unl) return;
     if (freeUnlock || Currency.infinityPoints.gte(cost)) {
       if (!freeUnlock) Currency.infinityPoints.subtract(cost);

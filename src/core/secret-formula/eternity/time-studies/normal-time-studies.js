@@ -421,7 +421,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Antimatter Dimensions gain a power based on Antimatter Galaxies`,
     effect: () => 1 + player.galaxies / 5000,
-    formatEffect: value => formatPow(value, 4, 5),
+    formatEffect: value => formatPow(value, 4, 4),
     cap: 1.07
   },
   {
@@ -453,7 +453,7 @@ export const normalTimeStudies = [
   {
     id: 171,
     cost: 15,
-    requirement: [161, 162],
+    requirement: [162, 163],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     // Check if r123 is unlocked, if so then make sure this displays correctly
     description: () => Achievement(123).isUnlocked ? `Time Shard requirement for the next Tickspeed upgrade goes up slower
@@ -686,12 +686,13 @@ export const normalTimeStudies = [
   {
     id: 241,
     cost: 30000,
-    requirement: [231, 232, 233, 234],
+  // Very dumb solution, but it should work
+    requirement: [() => player.dilation.totalTachyonGalaxies > 0, () => player.dilation.tachyonParticles.mantissa > 0, () => player.dilation.dilatedTime.mantissa > 0],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Time Dimensions gain a power based on Tachyon Galaxies",
-    effect: () => 1 + (player.dilation.totalTachyonGalaxies * 0.0004),
-    formatEffect: value => formatPow(value, 4, 5),
-    cap: 1.1
+    effect: () => Pelle.isDoomed ? 1 + (player.dilation.totalTachyonGalaxies * 0.0001) : 1 + (player.dilation.totalTachyonGalaxies * 0.0004),
+    formatEffect: value => formatPow(value, 4, 4),
+    cap: () => Pelle.isDoomed ? 1000000 : 1.1
   },
   // Note: These last 4 entries are the triad studies
   {

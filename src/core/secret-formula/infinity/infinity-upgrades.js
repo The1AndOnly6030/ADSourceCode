@@ -1,7 +1,7 @@
 import { DC } from "../../constants";
 
 function dimInfinityMult() {
-  return Currency.infinitiesTotal.value.times(0.2).plus(1);
+  return Currency.infinitiesTotal.value.times(0.3).plus(1);
 }
 function chargedDimInfinityMult() {
   return 1 + Math.log10(Math.max(1, Currency.infinitiesTotal.value.pLog10())) * Math.sqrt(Ra.pets.teresa.level) / 150;
@@ -200,8 +200,8 @@ export const infinityUpgrades = {
     cost: 300,
     checkRequirement: () => InfinityUpgrade.skipReset3.isBought,
     description: () =>
-      `Start every reset with ${formatInt(4)} Dimension Boosts, automatically unlocking the 8th Antimatter Dimension;
-      and an Antimatter Galaxy`,
+      `Start every reset with ${formatInt(5)} Dimension Boosts and an Antimatter Galaxy, automatically unlocking the
+      8th Antimatter Dimension and Sacrifice`,
   },
   ipOffline: {
     id: "ipOffline",

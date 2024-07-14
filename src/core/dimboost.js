@@ -163,9 +163,9 @@ export class DimBoost {
   static get totalBoosts() {
     return Math.floor(this.purchasedBoosts + this.imaginaryBoosts);
   }
-
+// First one is changed to 5, but should go down to 4 in Ra's Reality
   static get startingDimensionBoosts() {
-    if (InfinityUpgrade.skipResetGalaxy.isBought) return 4;
+    if (InfinityUpgrade.skipResetGalaxy.isBought) return Ra.isRunning ? 4 : 5;
     if (InfinityUpgrade.skipReset3.isBought) return 3;
     if (InfinityUpgrade.skipReset2.isBought) return 2;
     if (InfinityUpgrade.skipReset1.isBought) return 1;
@@ -202,8 +202,8 @@ export function softReset(tempBulk, forcedADReset = false, forcedAMReset = false
 
 export function skipResetsIfPossible(enteringAntimatterChallenge) {
   if (enteringAntimatterChallenge || Player.isInAntimatterChallenge) return;
-  if (InfinityUpgrade.skipResetGalaxy.isBought && player.dimensionBoosts < 4) {
-    player.dimensionBoosts = 4;
+  if (InfinityUpgrade.skipResetGalaxy.isBought && player.dimensionBoosts < 5) {
+    player.dimensionBoosts = 5;
     if (player.galaxies === 0) player.galaxies = 1;
   } else if (InfinityUpgrade.skipReset3.isBought && player.dimensionBoosts < 3) player.dimensionBoosts = 3;
   else if (InfinityUpgrade.skipReset2.isBought && player.dimensionBoosts < 2) player.dimensionBoosts = 2;

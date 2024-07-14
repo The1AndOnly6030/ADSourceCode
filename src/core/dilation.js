@@ -117,7 +117,10 @@ export function getTachyonGalaxyMult(thresholdUpgrade) {
 
 export function getDilationGainPerSecond() {
   if (Pelle.isDoomed) {
-    const tachyonEffect = Currency.tachyonParticles.value.pow(PelleRifts.paradox.milestones[1].effectOrDefault(1));
+    const tachyonEffect = Currency.tachyonParticles.value
+    .powEffectsOf(
+      PelleRifts.paradox.milestones[1],
+      PelleRifts.paradox);
     return new Decimal(tachyonEffect)
       .timesEffectsOf(DilationUpgrade.dtGain, DilationUpgrade.dtGainPelle, DilationUpgrade.flatDilationMult)
       .times(ShopPurchase.dilatedTimePurchases.currentMult ** 0.5)
@@ -134,6 +137,7 @@ export function getDilationGainPerSecond() {
       Ra.unlocks.continuousTTBoost.effects.dilatedTime,
       Ra.unlocks.peakGamespeedDT
     );
+
   dtRate = dtRate.times(getAdjustedGlyphEffect("dilationDT"));
   dtRate = dtRate.times(ShopPurchase.dilatedTimePurchases.currentMult);
   dtRate = dtRate.times(

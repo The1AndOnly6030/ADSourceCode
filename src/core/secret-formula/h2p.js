@@ -1,6 +1,9 @@
 import { DC } from "../constants";
 
 import { credits } from "@/core/secret-formula/credits";
+import { InfinityChallenge } from "../infinity-challenges";
+import { EternityChallenge } from "../eternity-challenge";
+import { PlayerProgress } from "../player-progress";
 
 export const h2p = {
   /**
@@ -43,19 +46,8 @@ Welcome to my stupid mod!
 <br>
 I've finally made changes to this mod, and here they are:
 <br>
-Achievement 11 makes ADs 100x stronger.
-Achievement 51 gives 4x IP.
-Achievement 82 gives +0.1 to Infinity Power conversion.
-Achievement 87 now applies its effect (250x Infinities) after 1 second (down from 5).
-Achievement 101 raises AD8 by ^1.001.
-Achievement 122 raises AD1 by ^1.008.
-Achievement 123 reduces the free Tickspeed threshold by -0.03x, now making it 1.30x/1.22x (from 1.33x/1.25x).
-Achievement 127 multiplies EP gain by log2(current EP).
-Achievement 131 now lets you keep 10% of Infinities as Banked Infinities (from 5%) and gives 5x Infinities (from 2x).
-Achievement 136 gives 100x more Dilated Time.
-Achievement 152 improves the Glyph level by 25.
-Achievement 161 reduces the Dilation penalty even more.
-Achievement 174 gives 100x more Dark Energy.
+<br>
+Fixed the missing period on Achievement 183's reward.
 <br>
 Two new Time Studies are added to nearly uncap replication chance and make it much cheaper.
 <br>
@@ -69,11 +61,15 @@ Eternity Challenges have reduced goals and unlock requirements (too many to list
 <br>
 The pre-reality RM cap is now reached at 1e12000 EP, but RM gain is further softcapped at 1e9000 EP.
 <br>
+The TGx dilation Glyph effect is now hardcapped at 0.0001x (this doesn't change gameplay, it just prevents a crash).
+<br>
 You can now hold 200 glyphs instead of 120!
 <br>
 Existentally Prolong now starts you with 1,000 Eternities.
 <br>
 Disparity of Rarity and Duplicity of Potency are much stronger (1.6x and 75% from 1.3x and 50%).
+<br>
+The autobuyer speed/bulk perks are improved to 10x (from 3x).
 <br>
 Effarig's Eternity now caps base Infinity Point gain to 1e250 (from 1e200).
 <br>
@@ -83,10 +79,12 @@ All base Memory Chunk formulas have their power quintupled.
 <br>
 Imaginary Machine gain is 6 times faster.
 <br>
+Some of Lai'tela's Singularity Milestones are hardcapped (only DM and/or DE ones, this is also to prevent crashes).
+<br>
+Paradox/Contradiction/Fallacy's effect also applies a power to the TP -> DT formula (similar to its second milestone).
+<br>
 \uE010
 <br>
-<br>
-Disclaimer: the multiplier tab will rarely display changes from the mod.
 <br>
 (Note to self: <b><i>Frequently change this text!</b></i>)
 `,
@@ -95,27 +93,181 @@ Disclaimer: the multiplier tab will rarely display changes from the mod.
       tab: ""
     },
     {
-      name: "Planned Changes",
+      name: "Achievement Changes",
       info: () => `
-It would be boring to have a purely vanilla AD "mod", so I want to shake stuff up. 
-As such, I have a long-ish plan of changes I want to make.
+Here's a comprehensive list of every achievement reward that has been added/changed!
 <br>
 <br>
-First off, I want to get rid of all those annoying timewalls. Raising the pre-Reality RM cap would also be cool.
+<b>Pre-Infinity:</b>
 <br>
-Timewall removals aside, I also just want to make the game much faster. Essentially, I want to 
-do stuff similar to what I did with my now deleted (because I broke it :/) mod. That stuff includes:
-<br>
-Adding some more Time Studies, improving existing ones and adding a few more.
-<br>
-Adding an immediate early-game buff, then removing it later on. Also adding some achievement rewards 
-like improved Infinity Power conversion, smaller Time Shard threshold increase (both done), etc would be cool.
+Achievement 11 applies a 100x multiplier to all Antimatter Dimensions.
 <br>
 <br>
-That's all I can think of for now.
+<b>Post-Infinity, Pre-Break:</b>
+<br>
+Nothing?????
+<br>
+<br>
+<b>Post-Break, Pre-5e11 IP Upgrade:</b>
+<br>
+Achievement 51 gives a 4x multiplier to Infinity Points.
+<br>
+Achievement 77 gives a 2x multiplier to Infinity Power (more accurately, ID1 is 2x stronger).
+<br>
+<br>
+<b>Post-5e11 IP Upgrade, Pre-Eternity:</b>
+<br>
+Achievement 82 improves Infinity Power conversion by +0.1.
+<br>
+Achievement 87 now applies its effect after 1 second (down from 5).
+<br>
+<br>
+<b>Post-Eternity, Pre-EC:</b>
+<br>
+Achievement 101 raises AD8 by ^1.001.
+<br>
+Achievement 108 now requires you to Eternity with <i>less than</i> 9 Replicanti instead of <i>exactly</i> 9 Replicanti.
+<br>
+<br>
+<b>EC1, Pre-TS181:</b>
+<br>
+Nothing?????
+<br>
+<br>
+<b>TS181, Pre-Dilation:</b>
+<br>
+Achievement 122 raises AD1 by ^1.008.
+<br>
+Achievement 123 decreases the Time Shard requirement for free Tickspeed upgrades by -0.03x.
+<br>
+Achievement 127 multiplies Eternity Point gain by log2(EP).
+<br>
+<br>
+<b>Dilation, Pre-Reality:</b>
+<br>
+Achievement 131 now gives 5x Infinities and you keep 10% of Infinities as Banked Infinities (from 2x and 5%).
+<br>
+Achievement 136 gives 100x more Dilated Time.
+<br>
+<br>
+<b>Post-Reality, Pre-Celestials:</b>
+<br>
+Nothing... :blobsad:
+<br>
+<br>
+<b>Celestials 1-3:</b>
+<br>
+Achievement 152 improves Glyph level by 25.
+<br>
+Achievement 154 has a 50% chance of giving 2x Realities and Perk Points (from 10%).
+<br>
+<br>
+<b>Celestials 4-5:</b>
+<br>
+Achievement 161 reduces the Dilation penalty even further.
+<br>
+Achievement 169's requirement is met if you get a Glyph level that's <i>at least</i> level 6969 instead of <i>exactly</i> level 6969.
+<br>
+Achievement 168 now gives 2x Memory gain (from +10%).
+<br>
+<br>
+<b>Celestial 6:</b>
+<br>
+Achievement 171 improves Glyph sacrifice by 6.66x (from 2x).
+<br>
+Achievement 174 now gives 100x more Dark Energy.
+<br>
+Achievement 175 makes Momentum increase 40x faster, making it max in an hour (from 10x, maxed in 4 hours).
+<br>
+<br>
+<b>Celestial 7:</b>
+<br>
+
+<br>
+<br>
+(ok i have to remember to actually change this stuff if i add new rewards)
 `,
       isUnlocked: () => true,
-      tags: ["mod", "change", "plan", "6030", "IfYouSeeThisThenTheModIsVeryUnfinished"],
+      tags: ["mod", "achievement", "6030"],
+      tab: ""
+    },
+    {
+      name: "Infinity to Eternity Changes",
+      info: () => `
+Here's all the changes I made for content starting from Infinity and ending at Eternity!
+<br>
+<br>
+The Infinity Upgrades that apply a multiplier to specific Antimatter Dimensions are now based on Infinities*0.3, improved from Infinities*0.2.
+<br>
+The Replicanti unlock is now purchased at 1e130 IP, improved from 1e140 IP. ${PlayerProgress.replicantiUnlocked() ? `Additionally, the base chance, interval, and galaxy costs are reduced by 1e10x IP.` : ``}
+<br>
+The Infinity Upgrade that starts you with 4 Dimension Boosts now starts you with 5. ${VUnlocks.raUnlock.isUnlocked ?
+  `In Ra's Reality, this is negated and you only receive the regular 4 Dimension Boosts.` : ``}<br>
+${InfinityChallenge(4).isUnlocked ? `Infinity Challenge 4 only reduces the power on other Antimatter Dimensions by ^0.4, improved from AD^0.25.<br>` : ``}
+${InfinityChallenge(5).isUnlocked ? `Infinity Challenge 5's goal is reduced to 1e15000, improved from 1e16500.<br>` : ``}
+${InfinityChallenge(7).isUnlocked ? `Infinity Challenge 7 increases the Dimension Boost power to 15x, improved from 10x.<br>` : ``}
+${InfinityChallenge(8).isUnlocked ? `Infinity Challenge 8's goal is reduced to 1e25000, improved from 1e27000.<br>` : ``}
+${PlayerProgress.replicantiUnlocked() ? `Replicanti interval upgrades cost scaling is reduced to 100x, improved from 1e10x.<br>` : ``}
+      `,
+      isUnlocked: () => PlayerProgress.infinityUnlocked() || PlayerProgress.eternityUnlocked() || PlayerProgress.realityUnlocked(),
+      tags: ["mod", "infinity", "replicanti", "earlygame", "6030"],
+      tab: ""
+    },
+    {
+      name: "Time Study Changes",
+      info: () => `
+Here's a complete list of all the changes I made to Time Studies!
+<br>
+First, I'll mention the studies I modded in. Then, I'll mention the studies I changed.
+<br>
+<br>
+Time Study 112 was added, nearly removing the cap on how many times you can upgrade replication chance.
+<br>
+Time Study 152 was added, reducing the cost of replication chance upgrades by 1e12x and making 1e3x the cost per upgrade.
+<br>
+Time Study 161 was added (moves the old TS161 to 162 and 162 to 163), applying a power to Antimatter Dimensions based on Antimatter Galaxies (galaxies/5000, caps at ^1.07).
+<br>
+Time Study 164 was added, applying a power to Infinity Dimensions based on Replicanti Galaxies (replicanti galaxies/18000, caps at ^1.01).
+<br>
+Time Study 241 was added, applying a power to Time Dimensions based on Tachyon Galaxies
+${Pelle.isDoomed ? `(tachyon galaxies/10000, caps at ???)` : `(tachyon galaxies/2500, caps at ^1.1)`}.
+<br>
+<br>
+With the modded studies covered, here are the vanilla Time Studies I changed:
+<br>
+<br>
+Time Study 171 was indirectly changed by Achievement 123's effect, and it also accounts for that (this isn't a change, I just wanted to mention it \uE010).
+<br>
+Time Study 225 gives an extra Replicanti Galaxy for every 1e800x Replicanti (down from every 1e1000x Replicanti).
+<br>
+Time Study 226 gives an extra Replicanti Galaxy for every 12 max Replicanti Galaxies (down from every 15 max Replicanti Galaxies).
+`,
+      isUnlocked: () => PlayerProgress.eternityUnlocked() || PlayerProgress.realityUnlocked(),
+      tags: ["mod", "timestudy", "eternity", "dilation", "midgame", "6030"],
+      tab: ""
+    },
+    {
+      name: "Eternity Challenge Changes",
+      info: () => `
+As you may have expected, I changed the Eternity Challenges. This list will grow as you unlock more Eternity Challenges.
+<br>
+<br>
+${EternityChallenge(1).hasUnlocked ? `Eternity Challenge 1's base goal is reduced to 1e1400, improved from 1e1800. Additionally, the Time Dimension multiplier scales much better.<br>` : ``}
+${EternityChallenge(2).hasUnlocked ? `Eternity Challenge 2's base goal is reduced to 1e850, improved from 1e975. The multiplier also caps at 1e200x, improved from 1e100x.<br>` : ``}
+${EternityChallenge(3).hasUnlocked ? `Eternity Challenge 3's base goal is reduced to 1e500, improved from 1e600. The effect is also improved to completions*0.8 from completions*0.72.<br>` : ``}
+${EternityChallenge(4).hasUnlocked ? `Eternity Challenge 4's base goal is reduced to 1e2500, improved from 1e2750. The goal scaling per completion is reduced to 1e500x, improved from 1e550x.
+  The multiplier also caps at 1e300x, improved from 1e100x.<br>` : ``}
+${EternityChallenge(5).hasUnlocked ? `Eternity Challenge 5's base goal is reduced to 1e500, improved from 1e750. The effect is also improved to completions*8 from completions*5.<br>` : ``}
+${EternityChallenge(6).hasUnlocked ? `Eternity Challenge 6's base goal is reduced to 1e600, improved from 1e850.<br>` : ``}
+${EternityChallenge(7).hasUnlocked ? `Eternity Challenge 7's goal scaling is reduced to 1e400x, improved from 1e530x.<br>` : ``}
+${EternityChallenge(8).hasUnlocked ? `Eternity Challenge 8's goal scaling is reduced to 1e750x, improved from 1e900x.<br>` : ``}
+${EternityChallenge(9).hasUnlocked ? `Eternity Challenge 9's base goal is reduced to 1e1400, improved from 1e1750. The multiplier also caps at 1e600x, improved from 1e400x.<br>` : ``}
+${EternityChallenge(10).hasUnlocked ? `Eternity Challenge 10's base goal is reduced to 1e2700, improved from 1e3000.<br>` : ``}
+${EternityChallenge(11).hasUnlocked ? `Eternity Challenge 11's goal scaling is reduced to 1e150x, improved from 1e200x.<br>` : ``}
+${EternityChallenge(12).hasUnlocked ? `Eternity Challenge 12's base goal is reduced to 1e80000, improved from 1e110,000.` : ``}
+`,
+      isUnlocked: () => true,
+      tags: ["mod", "eternity", "eternitychallenge", "midgame", "6030"],
       tab: ""
     },
     {
@@ -324,15 +476,17 @@ ${PlayerProgress.dilationUnlocked() ? "- <b>TP</b>: Tachyon Particle<br>" : ""}
 ${PlayerProgress.dilationUnlocked() ? "- <b>DT</b>: Dilated Time<br>" : ""}
 ${PlayerProgress.dilationUnlocked() ? "- <b>TG</b>: Tachyon Galaxy<br>" : ""}
 ${PlayerProgress.realityUnlocked() ? "- <b>RM</b>: Reality Machine<br>" : ""}
+${PlayerProgress.realityUnlocked() ? "- <b>RU</b>: Reality Upgrade<br>" : ""}
 ${PlayerProgress.realityUnlocked() ? "- <b>AP</b>: Automator Point<br>" : ""}
 ${PlayerProgress.realityUnlocked() ? "- <b>BH</b>: Black Hole<br>" : ""}
 ${MachineHandler.isIMUnlocked ? "- <b>iM</b>: Imaginary Machine<br>" : ""}
+${MachineHandler.isIMUnlocked ? "- <b>iU</b>: Imaginary Upgrade<br>" : ""}
 ${Laitela.isUnlocked ? "- <b>DM</b>: Dark Matter<br>" : ""}
 ${Laitela.isUnlocked ? "- <b>DE</b>: Dark Energy<br>" : ""}
 `,
       isUnlocked: () => true,
       tags: ["abbreviation", "shorten", "am", "ad", "ag", "ip", "nc", "ic", "id", "rg", "ep", "tt", "td", "ec", "tp",
-        "dt", "tg", "rm", "ap", "bh", "im", "dm", "de"],
+        "dt", "tg", "rm", "ru", "ap", "bh", "im", "iu", "dm", "de"],
       tab: ""
     }, {
       name: "Antimatter Dimensions",
@@ -891,9 +1045,9 @@ the middle of an Eternity.
 <br>
 <b>Costs for Time Theorems:</b>
 <br>
-<b>Antimatter:</b> Initially ${format(DC.E20000)}, ${formatX(DC.E20000)} per Theorem
+<b>Antimatter:</b> Initially ${format(DC.E18000)}, ${formatX(DC.E18000)} per Theorem
 <br>
-<b>Infinity Points:</b> Initially ${formatInt(1)}, ${formatX(DC.E100)} per Theorem
+<b>Infinity Points:</b> Initially ${formatInt(1)}, ${formatX(DC.E90)} per Theorem
 <br>
 <b>Eternity Points:</b> Initially ${formatInt(1)}, ${formatX(2)} per Theorem
 `,

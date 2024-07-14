@@ -761,9 +761,9 @@ export const normalAchievements = [
   },
   {
     id: 108,
-    name: "We COULD afford 9",
-    get description() { return `Eternity with exactly ${formatInt(9)} Replicanti.`; },
-    checkRequirement: () => Replicanti.amount.round().eq(9),
+    name: "We STILL couldn't afford 9",
+    get description() { return `Eternity with less than ${formatInt(9)} Replicanti.`; },
+    checkRequirement: () => Replicanti.amount.round().lt(9),
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
   },
   {
@@ -987,8 +987,8 @@ export const normalAchievements = [
   {
     id: 134,
     name: "When will it be enough?",
-    get description() { return `Reach ${formatPostBreak(DC.E18000)} Replicanti.`; },
-    checkRequirement: () => Replicanti.amount.exponent >= 18000,
+    get description() { return `Reach ${formatPostBreak(DC.E11111)} Replicanti.`; },
+    checkRequirement: () => Replicanti.amount.exponent >= 11111,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
       return `You gain Replicanti ${formatInt(2)} times faster under ${format(replicantiCap(), 1)} Replicanti.`;
@@ -1211,7 +1211,7 @@ export const normalAchievements = [
     name: "Reinstalled the game and rejoined the server",
     description: "Have every Time Study at once.",
     // Normally there are 58 non-Triad studies. Be sure to increase this number when you add custom studies!
-    checkRequirement: () => player.timestudy.studies.length >= 60,
+    checkRequirement: () => player.timestudy.studies.length >= 63,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
@@ -1246,9 +1246,10 @@ export const normalAchievements = [
   },
   {
     id: 166,
+    displayId: 169,
     name: "Nicenice.",
-    get description() { return `Get a Glyph with level exactly ${formatInt(6969)}.`; },
-    checkRequirement: () => gainedGlyphLevel().actualLevel === 6969,
+    get description() { return `Get a Glyph with level at least ${formatInt(6969)}.`; },
+    checkRequirement: () => gainedGlyphLevel().actualLevel >= 6969,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     get reward() { return `+${formatInt(69)} to Glyph level.`; },
     effect: 69
@@ -1269,8 +1270,8 @@ export const normalAchievements = [
     get description() { return `Get ${formatInt(50)} total Ra Celestial Memory levels.`; },
     checkRequirement: () => Ra.totalPetLevel >= 50,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    get reward() { return `Get ${formatPercents(0.1)} more memories.`; },
-    effect: 1.1
+    get reward() { return `Memory gain is doubled.`; },
+    effect: 2
   },
   {
     id: 171,
@@ -1278,8 +1279,8 @@ export const normalAchievements = [
     description: "Sacrifice every sacrificable Glyph type at least once.",
     checkRequirement: () => Object.values(player.reality.glyphs.sac).every(s => s > 0),
     checkEvent: GAME_EVENT.GLYPHS_CHANGED,
-    get reward() { return `Glyph sacrifice is ${formatX(2)} stronger.`; },
-    effect: 2,
+    get reward() { return `Glyph sacrifice is ${formatX(6.66, 2, 2)} stronger.`; },
+    effect: 6.66,
   },
   {
     id: 172,
@@ -1316,9 +1317,9 @@ export const normalAchievements = [
     checkRequirement: () => AlchemyResources.all.every(x => x.amount >= Ra.alchemyResourceCap),
     checkEvent: GAME_EVENT.REALITY_RESET_AFTER,
     get reward() {
-      return `Synergism can go above ${formatPercents(1)} and Momentum increases ${formatX(10)} faster.`;
+      return `Synergism can go above ${formatPercents(1)} and Momentum increases ${formatX(40)} faster.`;
     },
-    effect: 10,
+    effect: 40,
   },
   {
     id: 176,
@@ -1365,7 +1366,7 @@ export const normalAchievements = [
     checkEvent: GAME_EVENT.INFINITY_CHALLENGE_COMPLETED,
     // Weirdly specific reward? Yes, its V's ST bonus because we forgot to disable it
     // when balancing Pelle and only realised too late.
-    get reward() { return `All Antimatter Dimensions are raised to ${formatPow(1.0812403840463596, 0, 3)}`; },
+    get reward() { return `All Antimatter Dimensions are raised to ${formatPow(1.0812403840463596, 0, 3)}.`; },
     effect: 1.0812403840463596
   },
   {
@@ -1407,6 +1408,8 @@ export const normalAchievements = [
     name: "The End",
     description: "Beat the game.",
     checkRequirement: () => GameEnd.endState > END_STATE_MARKERS.GAME_END && !GameEnd.removeAdditionalEnd,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    get reward() { return ``},
+    effect: 666
   },
 ];

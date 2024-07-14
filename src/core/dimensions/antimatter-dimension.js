@@ -34,7 +34,7 @@ export function antimatterDimensionCommonMultiplier() {
     Achievement(92),
     TimeStudy(91),
     TimeStudy(101),
-    TimeStudy(161),
+    TimeStudy(162),
     TimeStudy(193),
     InfinityChallenge(3),
     InfinityChallenge(3).reward,
@@ -178,7 +178,8 @@ function applyNDPowers(mult, tier) {
       InfinityUpgrade.thisInfinityTimeMult.chargedEffect,
       AlchemyResource.power,
       Achievement(183),
-      PelleRifts.paradox
+      PelleRifts.paradox,
+      Achievement(188)
     );
 
   multiplier = multiplier.pow(getAdjustedGlyphEffect("curseddimensions"));

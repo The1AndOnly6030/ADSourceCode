@@ -49,10 +49,10 @@ export const infinityChallenges = [
     id: 4,
     description: () =>
       `only the latest bought Antimatter Dimension's production is normal. All other Antimatter Dimensions
-      produce less (${formatPow(0.25, 2, 2)}).`,
+      produce less (${formatPow(0.4, 2, 2)}).`,
     goal: DC.E13000,
     isQuickResettable: true,
-    effect: 0.25,
+    effect: 0.4,
     reward: {
       description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.05, 2, 2)}`,
       effect: 1.05
@@ -64,7 +64,7 @@ export const infinityChallenges = [
     description:
       `buying Antimatter Dimensions 1-4 causes all cheaper AD costs to increase.
       Buying Antimatter Dimensions 5-8 causes all more expensive AD costs to increase.`,
-    goal: DC.E16500,
+    goal: DC.E15000,
     isQuickResettable: true,
     reward: {
       description: () =>
@@ -103,11 +103,11 @@ export const infinityChallenges = [
         TimeStudy(81)
       );
       return `you cannot buy Antimatter Galaxies. Base Dimension Boost multiplier is increased to a maximum
-        of ${formatX(10)}. (Current base multiplier: ${formatX(mult, 2, 1)})`;
+        of ${formatX(15)}. (Current base multiplier: ${formatX(mult, 2, 1)})`;
     },
     goal: DC.E10000,
     isQuickResettable: false,
-    effect: 10,
+    effect: 15,
     reward: {
       description: () => `Dimension Boost multiplier is increased to a minimum of ${formatX(4)}`,
       effect: 4
@@ -119,7 +119,7 @@ export const infinityChallenges = [
     description: () =>
       `AD production rapidly and continually drops over time. Purchasing Antimatter Dimension or Tickspeed
         upgrades sets production back to ${formatPercents(1)} before it starts dropping again.`,
-    goal: DC.E27000,
+    goal: DC.E25000,
     isQuickResettable: true,
     effect: () => DC.D0_8446303389034288.pow(
       Math.max(0, player.records.thisInfinity.time - player.records.thisInfinity.lastBuyTime)),

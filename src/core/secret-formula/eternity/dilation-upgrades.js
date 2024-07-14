@@ -116,14 +116,16 @@ export const dilationUpgrades = {
     id: 6,
     cost: 5e7,
     description: "Antimatter Dimension multiplier based on Dilated Time, unaffected by Time Dilation",
-    effect: () => Currency.dilatedTime.value.pow(308).clampMin(1),
+    effect: () => Currency.dilatedTime.value.pow(500).clampMin(1),
+    // Effect is usually DT^308
     formatEffect: value => formatX(value, 2, 1)
   },
   ipMultDT: {
     id: 7,
     cost: 2e12,
     description: "Gain a multiplier to Infinity Points based on Dilated Time",
-    effect: () => Currency.dilatedTime.value.pow(1000).clampMin(1),
+    effect: () => Currency.dilatedTime.value.pow(2000).clampMin(1),
+    // Effect is usually DT^1000
     formatEffect: value => formatX(value, 2, 1),
     cap: () => Effarig.eternityCap
   },
@@ -142,7 +144,8 @@ export const dilationUpgrades = {
     id: 10,
     cost: 1e15,
     description: "Generate Time Theorems based on Tachyon Particles",
-    effect: () => Currency.tachyonParticles.value.div(20000),
+    effect: () => Currency.tachyonParticles.value.div(1000),
+    // Effect is usually TP/20000
     formatEffect: value => `${format(value, 2, 1)}/sec`
   },
   dtGainPelle: rebuyable({

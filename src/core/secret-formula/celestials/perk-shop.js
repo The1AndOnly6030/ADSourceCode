@@ -37,8 +37,8 @@ export const perkShop = {
     effect: bought => Math.pow(2, bought),
     formatEffect: value => formatX(value, 2),
     formatCost: value => format(value, 2),
-    costCap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 1048576 : 2048),
-    cap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 1048576 : 2048)
+    costCap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 2147483648 : 2048),
+    cap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 2147483648 : 2048)
   }),
   bulkDilation: rebuyable({
     id: 2,
@@ -48,8 +48,8 @@ export const perkShop = {
     effect: bought => Math.pow(2, bought),
     formatEffect: value => formatX(value, 2),
     formatCost: value => format(value, 2),
-    costCap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 1638400 : 1600),
-    cap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 16384 : 16),
+    costCap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 214748364800 : 1600),
+    cap: () => (Ra.unlocks.perkShopIncrease.canBeApplied ? 2147483648 : 16),
   }),
   autoSpeed: rebuyable({
     id: 3,

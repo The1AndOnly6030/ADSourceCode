@@ -217,8 +217,9 @@ export const Pelle = {
         ? Currency.eternityPoints.value.plus(1).pow(0.3)
         : DC.D1,
       replication: isActive("replication")
-        ? 10 ** 53 ** (PelleRifts.vacuum.percentage)
+        ? 10 ** 53 ** Math.clampMax(PelleRifts.vacuum.percentage, 1.44345)
         : 1,
+        // I used an extremely specific number because Pelle's replication glyph effect isn't decimalized (idk how :/)
       dilation: isActive("dilation")
         ? Decimal.pow(player.dilation.totalTachyonGalaxies, 1.5).max(1)
         : DC.D1,
@@ -241,7 +242,7 @@ export const Pelle = {
         return `Eternity Point gain ${formatX(Currency.eternityPoints.value.plus(1).pow(0.3), 2)}
           (based on current EP)`;
       case "replication":
-        return `Replication speed ${formatX(10 ** 53 ** (PelleRifts.vacuum.percentage), 2)} \
+        return `Replication speed ${formatX(10 ** 53 ** Math.clampMax((PelleRifts.vacuum.percentage), 1.44345), 2)} \
         (based on ${wordShift.wordCycle(PelleRifts.vacuum.name)})`;
       case "dilation":
         return `Dilated Time gain ${formatX(Decimal.pow(player.dilation.totalTachyonGalaxies, 1.5).max(1), 2)}
@@ -298,7 +299,7 @@ export const Pelle = {
   },
 
   realityShardGain(remnants) {
-    return Decimal.pow(10, remnants ** (1 / 7.5) * 4).minus(1).div(1e3);
+    return Decimal.pow(10, remnants ** (1 / 7.5) * 4).minus(1).div(1);
   },
 
   get realityShardGainPerSecond() {
@@ -311,7 +312,7 @@ export const Pelle = {
 
   // Calculations assume this is in units of proportion per second (eg. 0.03 is 3% drain per second)
   get riftDrainPercent() {
-    return 0.03;
+    return 0.1;
   },
 
   get glyphMaxLevel() {

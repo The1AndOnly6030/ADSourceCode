@@ -390,9 +390,9 @@ export const perks = {
     label: "IDAS",
     family: PERK_FAMILY.AUTOMATION,
     get description() {
-      return `Infinity Dimension autobuyers work ${formatX(3)} faster.`;
+      return `Infinity Dimension autobuyers work ${formatX(10)} faster.`;
     },
-    effect: 1 / 3,
+    effect: 1 / 10,
     automatorPoints: 5,
     shortDescription: () => "Faster ID Autobuyers",
     layoutPosList: [74095, 80199, 80198, 81000, 82997, 77720],
@@ -402,9 +402,9 @@ export const perks = {
     label: "REPAS",
     family: PERK_FAMILY.AUTOMATION,
     get description() {
-      return `Replicanti autobuyers work ${formatX(3)} faster.`;
+      return `Replicanti autobuyers work ${formatX(10)} faster.`;
     },
-    effect: 1 / 3,
+    effect: 1 / 10,
     automatorPoints: 5,
     shortDescription: () => "Faster Replicanti Autobuyers",
     layoutPosList: [57685, 80198, 80197, 80999, 83000, 79297],
@@ -414,9 +414,9 @@ export const perks = {
     label: "DAS",
     family: PERK_FAMILY.AUTOMATION,
     get description() {
-      return `Dilation Upgrade autobuyers work ${formatX(3)} faster.`;
+      return `Dilation Upgrade autobuyers work ${formatX(10)} faster.`;
     },
-    effect: 1 / 3,
+    effect: 1 / 10,
     automatorPoints: 5,
     shortDescription: () => "Faster Dilation Autobuyers",
     layoutPosList: [113895, 82602, 79402, 79395, 80609, 72715],
@@ -455,9 +455,9 @@ export const perks = {
     label: "DAB",
     family: PERK_FAMILY.AUTOMATION,
     get description() {
-      return `Dilation Upgrade autobuyers buy three times as many Dilation Upgrades at once.`;
+      return `Dilation Upgrade autobuyers buy ten times as many Dilation Upgrades at once.`;
     },
-    effect: 3,
+    effect: 10,
     automatorPoints: 5,
     shortDescription: () => "Dilation Autobuyer bulk",
     layoutPosList: [127384, 81400, 79803, 79399, 81000, 103048],
