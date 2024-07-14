@@ -8,6 +8,7 @@ export const changelog = [
    *  @property {function: @return String} info  Text body of information for the entry.
    * }
    */
+  // Ignore the first 3 changelog entries, they're still missing lots of information and frankly I don't want to make changelog entries anymore
   {
     date: [2024, 6, 22],
     name: "Not an update, just reviewing the changes",

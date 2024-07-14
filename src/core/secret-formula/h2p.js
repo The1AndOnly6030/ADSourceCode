@@ -39,6 +39,7 @@ visible tab and subtab, if such an entry exists.
       tags: ["h2p", "how", "to", "play", "modal"],
       tab: ""
     },
+    // Ignore the H2P page below, I'd rather have all the changes in separate pages to make it feel less cluttered.
     {
       name: "The Mod's Changes",
       info: () => `
