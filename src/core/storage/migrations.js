@@ -419,8 +419,13 @@ export const migrations = {
 
       // This update has a rebalance that assumes the 3rd dilation repeatable is unpurchasable in cel7
       if (player.celestials.pelle.doomed) player.dilation.rebuyables[3] = 0;
+    },
+    41: player => {
+
     }
   },
+
+// The code above is for any updates made
 
   normalizeTimespans(player) {
     player.realTimePlayed *= 100;

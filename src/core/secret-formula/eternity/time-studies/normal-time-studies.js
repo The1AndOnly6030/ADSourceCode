@@ -682,12 +682,11 @@ export const normalTimeStudies = [
     description: "Dimensional Sacrifice applies to 1st Antimatter Dimension",
     effect: () => Sacrifice.totalBoost,
   },
-  // This next study is only reasonably available after unlocking dilation in early realities
   {
     id: 241,
     cost: 30000,
-  // Very dumb solution, but it should work
-    requirement: [() => player.dilation.totalTachyonGalaxies > 0, () => player.dilation.tachyonParticles.mantissa > 0, () => player.dilation.dilatedTime.mantissa > 0],
+  // This SHOULD check if you have any dilation studies (this includes the dilation unlock). If so, the study is unlocked (this makes sense given the placement)
+    requirement: [() => player.dilation.studies.length > 0],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Time Dimensions gain a power based on Tachyon Galaxies",
     effect: () => Pelle.isDoomed ? 1 + (player.dilation.totalTachyonGalaxies * 0.0001) : 1 + (player.dilation.totalTachyonGalaxies * 0.0004),
